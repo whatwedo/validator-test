@@ -1,0 +1,25 @@
+{
+    "name": "whatwedo/validator-test",
+    "type": "library",
+    "description": "A fluid Validation tester",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maurizio Monticelli",
+            "email": "maurizio@whatwedo.ch"
+        }
+    ],
+    "require": {
+        "php":                      ">=7.4",
+        "zenstruck/callback":  "~1.4",
+        "symfony/validator": "~4.0|~5.0"
+    },
+    "suggest": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "whatwedo\\ValidationTest\\": "src/"
+        }
+    }
+}
