@@ -28,7 +28,7 @@ final class Kernel extends BaseKernel
             'router' => ['utf8' => true],
             'test' => true,
             'profiler' => ['enabled' => true, 'collect' => true],
-            'session' => ['storage_id' => 'session.storage.mock_file'],
+            'session' => ['storage_factory_id' => 'session.storage.factory.mock_file'],
         ]);
         $c->register('logger', NullLogger::class); // disable logging
     }
