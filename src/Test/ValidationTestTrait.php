@@ -9,8 +9,19 @@ use \whatwedo\ValidationTest\ValidatorTester;
 
 trait ValidationTestTrait
 {
+    private ?ValidatorTester $validatorTester = null;
+
     public function getValidator(): ValidatorTester
     {
-        return new ValidatorTester(self::getContainer()->get(ValidatorInterface::class));
+        if (!$this->validatorTester) {
+            $this->validatorTester = new ValidatorTester(self::getContainer()->get(ValidatorInterface::class));
+        }
+        return $this->validatorTester;
+    }
+
+    public function newValidator(): ValidatorTester
+    {
+        $this->validatorTester = new ValidatorTester(self::getContainer()->get(ValidatorInterface::class));
+        return $this->validatorTester;
     }
 }
