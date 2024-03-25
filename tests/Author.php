@@ -31,11 +31,10 @@ namespace whatwedo\ValidationTest\Tests;
 
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
-/**
- * @UniqueEntity(fields="email", errorPath="email", message="appuser.prop.email.error.not_unique", groups={"register"})
- * @UniqueEntity(fields="username", errorPath="username", message="appuser.prop.username.error.not_unique", groups={"register"})
- */
+#[UniqueEntity(fields: ['email'], message: 'appuser.prop.email.error.not_unique', errorPath: 'email', groups: ['register'])]
+#[UniqueEntity(fields: ['username'], message: 'appuser.prop.username.error.not_unique', errorPath: 'username', groups: ['register'])]
 class Author
 {
     private $name;
